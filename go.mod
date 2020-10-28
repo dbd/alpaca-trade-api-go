@@ -3,6 +3,7 @@ module github.com/dbd/alpaca-trade-api-go
 go 1.14
 
 require (
+	github.com/alpacahq/alpaca-trade-api-go v1.6.2
 	github.com/cheekybits/is v0.0.0-20150225183255-68e9c0620927 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/gorilla/websocket v1.4.0
