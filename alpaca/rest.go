@@ -652,12 +652,20 @@ func (c *Client) ListBars(symbols []string, opts ListBarParams) (map[string][]Ba
 		return nil, fmt.Errorf("timeframe is required for the bars endpoint")
 	}
 
-	if opts.StartDt != nil {
-		vals.Set("start", opts.StartDt.Format(time.RFC3339))
+	if opts.Start != nil {
+		vals.Set("start", opts.Start.Format(time.RFC3339))
 	}
 
-	if opts.EndDt != nil {
-		vals.Set("end", opts.EndDt.Format(time.RFC3339))
+	if opts.End != nil {
+		vals.Set("end", opts.End.Format(time.RFC3339))
+	}
+
+	if opts.After != nil {
+		vals.Set("start", opts.Start.Format(time.RFC3339))
+	}
+
+	if opts.Until != nil {
+		vals.Set("end", opts.End.Format(time.RFC3339))
 	}
 
 	if opts.Limit != nil {
